@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugalu | Móveis Artesanais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Bugalu móveis e decorações</h1>
+    <p>Marcenaria Artesanal</p>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#moveis">Móveis</a>
+        <a href="#personalizar">Personalize</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+        <a href="#carrinho">Carrinho 🛒</a>
+    </nav>
+</header>
+
+<section class="banner" id="inicio">
+    <div>
+        <h2>Móveis únicos, feitos à mão.</h2>
+        <p>Seu projeto, nossa arte.</p>
+        <a href="#personalizar" class="botao">Personalize seu móvel</a>
+    </div>
+</section>
+
+<section id="moveis">
+    <h2>Nossos trabalhos</h2>
+    <p class="subtitulo">
+        Conheça alguns modelos e inspire-se.
+    </p>
+
+    <div class="galeria">
+
+        <div class="produto">
+            <img src="fotos/mesa.jpeg"
+                 alt="Mesa de madeira">
+            <h3>Mesa artesanal</h3>
+            <p>Design exclusivo em madeira.</p>
+        </div>
+
+        <div class="produto">
+            <img src="fotos/estante.jpeg"
+                 alt="Estante de madeira">
+            <h3>Estante</h3>
+            <p>Elegância e funcionalidade.</p>
+        </div>
+
+        <div class="produto">
+            <img src="fotos/atendente.jpeg"
+                 alt="Atendimento personalizado">
+            <h3>Móveis personalizados</h3>
+            <p>Feitos conforme sua necessidade.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="personalizar" id="personalizar">
+
+    <h2>Crie seu próprio móvel</h2>
+    <p>Escolha as características do seu projeto.</p>
+
+    <form id="formulario">
+
+        <label>Tipo de móvel:</label>
+        <select id="tipo" required>
+            <option value="">Selecione</option>
+            <option>Mesa</option>
+            <option>Cadeira</option>
+            <option>Estante</option>
+            <option>Armário</option>
+            <option>Outro</option>
+        </select>
+
+        <label>Dimensões (comprimento x largura x altura):</label>
+        <input type="text" id="dimensoes"
+               placeholder="Ex: 120 x 60 x 80 cm" required>
+
+        <label>Cor desejada:</label>
+        <select id="cor" required>
+            <option value="">Selecione</option>
+            <option>Natural</option>
+            <option>Marrom</option>
+            <option>Preto</option>
+            <option>Branco</option>
+            <option>Personalizada</option>
+        </select>
+
+        <label>Tipo de madeira:</label>
+        <select id="madeira" required>
+            <option value="">Selecione</option>
+            <option>Pinheiro</option>
+            <option>Madeira maciça</option>
+            <option>A definir</option>
+        </select>
+
+        <label>Referência ou observações:</label>
+        <textarea id="observacoes"
+                  placeholder="Descreva detalhes do seu projeto..."></textarea>
+
+        <label>Link de uma foto de referência (opcional):</label>
+        <input type="url" id="referencia"
+               placeholder="Cole aqui o link da imagem">
+
+        <button type="submit" class="botao">
+            Adicionar ao carrinho
+        </button>
+
+    </form>
+
+</section>
+
+<section id="carrinho">
+    <h2>Meu carrinho</h2>
+
+    <div id="itensCarrinho">
+        <p>Seu carrinho está vazio.</p>
+    </div>
+</section>
+
+<section id="avaliacoes">
+    <h2>Avaliações de clientes</h2>
+
+    <div class="avaliacoes">
+
+        <div class="avaliacao">
+            <h3>★★★★★</h3>
+            <p>"Excelente acabamento e muito capricho!"</p>
+            <strong>Nícolas</strong>
+        </div>
+
+        <div class="avaliacao">
+            <h3>★★★★★</h3>
+            <p>"O móvel ficou exatamente como eu queria."</p>
+            <strong>Rickelmelly</strong>
+        </div>
+
+        <div class="avaliacao">
+            <h3>★★★★★</h3>
+            <p>"Trabalho artesanal de ótima qualidade."</p>
+            <strong>Marcelo</strong>
+        </div>
+
+    </div>
+</section>
+
+<footer id="contato">
+
+    <h2>Bugalu, móveis e decorações</h2>
+    <p>100% artesanal. Feito com dedicação.</p>
+
+    <p>Endereço: xxxx</p>
+    <p>Telefone: (32) 99999-9999</p>
+    <p>Instagram: @sua_marcenaria</p>
+    <p>Email: contato@bugalu.com</p>
+
+    <p class="direitos">
+        © 2026 Bugalu - Todos os direitos reservados.
+    </p>
+
+</footer>
+
+</body>
+</html>
