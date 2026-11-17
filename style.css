@@ -1,0 +1,280 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f5ef;
+    color: #35291f;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: #493426;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    letter-spacing: 4px;
+}
+
+header p {
+    margin: 8px;
+    color: #d8c3a5;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d8b68c;
+}
+
+/* BANNER */
+
+.banner {
+    min-height: 400px;
+    background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("fotos/sala_decorada.jpeg")
+    center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.banner h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* BOTÕES */
+
+.botao {
+    display: inline-block;
+    background: #79563a;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.botao:hover {
+    background: #5b3e29;
+}
+
+/* SEÇÕES */
+
+section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    margin-bottom: 30px;
+    color: #777;
+}
+
+/* GALERIA */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.produto {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px #00000012;
+}
+
+.produto img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.produto h3 {
+    margin: 15px;
+}
+
+.produto p {
+    color: #777;
+}
+
+/* PERSONALIZAÇÃO */
+
+.personalizar {
+    background: #eee5d9;
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* CARRINHO */
+
+#itensCarrinho {
+    max-width: 600px;
+    margin: 25px auto;
+    text-align: left;
+}
+
+.item-carrinho {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.item-carrinho p {
+    margin: 8px 0;
+}
+
+.item-carrinho button {
+    background: #79563a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* AVALIAÇÕES */
+
+.avaliacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.avaliacao {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.avaliacao h3 {
+    color: #c69b45;
+    margin-bottom: 15px;
+}
+
+.avaliacao strong {
+    display: block;
+    margin-top: 15px;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #493426;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer p {
+    margin: 12px;
+    color: #e0d5c9;
+}
+
+.direitos {
+    border-top: 1px solid #77604e;
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .galeria,
+    .avaliacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .banner h2 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+}
