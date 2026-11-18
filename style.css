@@ -1,8 +1,22 @@
+@font-face {
+    font-family:'bugalu-font-bold';
+    src: url("font/MartelSans-Bold.ttf") format('truetype');
+}
 
+@font-face {
+    font-family:'bugalu-font-regular';
+    src: url("font/MartelSans-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family:'bugalu-font-handwrite';
+    src: url("font/CedarvilleCursive-Regular.ttf") format('truetype');
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'bugalu-font-regular';
 }
 
 html {
@@ -18,29 +32,55 @@ body {
 /* CABEÇALHO */
 
 header {
-    background: #493426;
+    background-color: #38240d;
+}
+.cabecalho-logo {
+    /* background: #493426; */
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 15px 0;
+    
 }
 
-header h1 {
+.cabecalho-logo h1 {
     letter-spacing: 4px;
+    font-family: 'bugalu-font-bold';
+    font-size: 1.5rem;
+}
+.cabecalho-logo   p {
+        color: #d8c3a5;
+    }
+
+
+
+.cabecalho-links {
+    border-top: #ffc99d solid 1px;
+    width: 100vw;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header p {
-    margin: 8px;
-    color: #d8c3a5;
+.cabecalho-links  div {
+    position: absolute;
+    right: 0;
+
+}
+.cabecalho-links div img {
+    width: 20px;
 }
 
-nav {
-    margin-top: 20px;
+.cabecalho-links div span {
+    color: white;
 }
+
+
+
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 10px;
     font-size: 14px;
 }
 
@@ -66,8 +106,13 @@ nav a:hover {
 }
 
 .banner h2 {
-    font-size: 40px;
+    font-size: 3rem;
     margin-bottom: 15px;
+}
+.banner span {
+    font-family: 'bugalu-font-handwrite';
+    font-size: 4.5rem;
+    color: yellow;
 }
 
 .banner p {
