@@ -175,7 +175,7 @@ section h2 span {
 
 .container-moveis {
     width: 100%;
-    height: 500px;
+    height: 600px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -205,7 +205,7 @@ section h2 span {
 }
 
 .carrossel-container-principal {
-    display: flex;
+  display: flex;
   align-items: stretch;
   width: 100%;
   max-width: 1280px;
@@ -222,25 +222,23 @@ section h2 span {
 }
 
 
-.carrossel-container {
-    width: 100%;
-    max-width: 1200px;
-    overflow: hidden;
-    display: flex;
-}
+
 
 
 
 /* PERSONALIZAÇÃO */
 
-.personalizar {
-    background: #eee5d9;
+
+.container-form span {
+    font-family: "bugalu-font-handwrite";
+    font-size: 28px;
+    color: var(--laranja);
 }
 
 .carrossel-container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     overflow: hidden;
 }
 
@@ -251,16 +249,16 @@ section h2 span {
 }
 
         /* Cada slide ocupa 1/3 (33.333%) da largura visível */
-.carrossel-slide {
-    flex: 0 0 25%;
-    padding: 0 8px;
+        .carrossel-slide {
+            flex: 0 0 25%;
+            padding: 0 8px;
     display: flex;
     flex-direction: column;
 }
 
 .produto-descricao {
-    width: 100%;
-    height: 90px;
+    width: 270px;
+    height: 100px;
     background-color: var(--bege);
     padding-left: 5px;
 }
@@ -271,23 +269,24 @@ section h2 span {
 }
 
 .carrossel-slide span {
-      font-size: 25px;
+    font-size: 20px;
     text-align: left;
     display: block;
     margin-top: 15px;
+    color: var(--marrom);
 }
 
 .carrossel-slide img {
-    width: 100%;
-    height: 250px;
+    width: 270px;
+    height: 270px;
     object-fit: cover;
     display: block;
     user-select: none;
 }
 
-        /* Botões de navegação */
+/* Botões de navegação */
 
-    
+
 
 .btn-prev {
     left: 15px;
@@ -297,6 +296,11 @@ section h2 span {
     right: 15px;
 }
 
+.container-form {
+    height: 200vh;
+    background: var(--bege);
+    padding: 20px 0;
+}
 form {
     max-width: 600px;
     margin: 30px auto;
@@ -330,6 +334,41 @@ form button {
     width: 100%;
     margin-top: 25px;
 }
+
+.alerta-toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #16a34a;
+      color: #ffffff;
+      padding: 16px 20px;
+      border-radius: 6px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 1000;
+
+      /* Estado inicial: invisível e deslocado para cima */
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .alerta-toast.visivel {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .alerta-toast button {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.2rem;
+      padding: 0 4px;
+      line-height: 1;
+    }
 
 /* CARRINHO */
 

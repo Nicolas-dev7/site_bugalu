@@ -1,8 +1,10 @@
 const carrossel = document.getElementById('carrossel');
-        const track = document.getElementById('track');
-        const slides = document.querySelectorAll('.carrossel-slide');
-        const btnPrev = document.getElementById('btnPrev');
-        const btnNext = document.getElementById('btnNext');
+const track = document.getElementById('track');
+const slides = document.querySelectorAll('.carrossel-slide');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+
 
         let currentIndex = 0;
         let autoPlayInterval;
@@ -14,7 +16,7 @@ const carrossel = document.getElementById('carrossel');
             if (window.innerWidth <= 768) return 2;
             return 4;
         }
-
+        
         // Atualiza a posição do carrossel
         function atualizarCarrossel() {
             const slidesVisiveis = getSlidesVisiveis();
@@ -30,7 +32,7 @@ const carrossel = document.getElementById('carrossel');
             const porcentagemDeslocamento = currentIndex * (100 / slidesVisiveis);
             track.style.transform = `translateX(-${porcentagemDeslocamento}%)`;
         }
-
+        
         function proximoSlide() {
             currentIndex++;
             atualizarCarrossel();
@@ -45,7 +47,7 @@ const carrossel = document.getElementById('carrossel');
         function iniciarAutoPlay() {
             autoPlayInterval = setInterval(proximoSlide, tempoTroca);
         }
-
+        
         function pararAutoPlay() {
             clearInterval(autoPlayInterval);
         }
@@ -57,7 +59,7 @@ const carrossel = document.getElementById('carrossel');
             pararAutoPlay();
             iniciarAutoPlay();
         });
-
+        
         btnPrev.addEventListener('click', () => {
             slideAnterior();
             pararAutoPlay();
@@ -73,3 +75,32 @@ const carrossel = document.getElementById('carrossel');
 
         // Inicia o carrossel ao carregar a página
         iniciarAutoPlay();
+
+const form = document.getElementById('formulario');
+const alerta = document.getElementById('card-alerta');
+const btnFechar = document.getElementById('fechar-alerta');
+let temporizador;
+
+function mostrarAlerta() {
+    alerta.classList.add('visivel');
+
+      // Reseta o timer caso o usuário envie duas vezes seguidas
+    clearTimeout(temporizador);
+    temporizador = setTimeout(() => {
+    alerta.classList.remove('visivel');
+      }, 5000); // Some após 4 segundos
+}
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o recarregamento da página
+
+      // Aqui entraria o envio real (fetch) para o servidor, se houver
+
+      form.reset();
+      mostrarAlerta();
+    });
+
+btnFechar.addEventListener('click', () => {
+      alerta.classList.remove('visivel');
+      clearTimeout(temporizador);
+})
