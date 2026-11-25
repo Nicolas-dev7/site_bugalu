@@ -79,28 +79,69 @@ const btnNext = document.getElementById('btnNext');
 const form = document.getElementById('formulario');
 const alerta = document.getElementById('card-alerta');
 const btnFechar = document.getElementById('fechar-alerta');
+let lista = document.getElementById('lista')
 let temporizador;
+
+
 
 function mostrarAlerta() {
     alerta.classList.add('visivel');
 
-      // Reseta o timer caso o usuário envie duas vezes seguidas
+    // Reseta o timer caso o usuário envie duas vezes seguidas
     clearTimeout(temporizador);
     temporizador = setTimeout(() => {
-    alerta.classList.remove('visivel');
-      }, 5000); // Some após 4 segundos
+        alerta.classList.remove('visivel');
+    }, 5000); // Some após 4 segundos
 }
 
+function obterRegistros() {
+      return JSON.parse(localStorage.getItem('dadosPedido')) || [];
+    }
+
+function renderizarPedidos () {
+    let registros = obterRegistros()
+    lista 
+
+    registros.forEach(index => {
+        const div = document.createElement('div');
+        div.className = 'item-salvo';
+        div.textContent = `${index.nome} — ${index.email}`;
+        lista.appendChild(div);
+    });
+}
+
+let registro_id = 0;
 form.addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o recarregamento da página
-
-      // Aqui entraria o envio real (fetch) para o servidor, se houver
-
-      form.reset();
-      mostrarAlerta();
+    const novoRegistro = {
+        id : registro_id,
+        nome : document.getElementById('nome').value,
+        telefone : document.getElementById('telefone').value,
+        tipoMovel : document.getElementById('tipo').value,
+        dimensoes : document.getElementById('dimensoes').value,
+        cor : document.getElementById('cor').value,
+        tipo_madeira : document.getElementById('madeira').value,
+        observacao : document.getElementById('observacoes').value,
+        imagem : document.getElementById('imagem').value
+    }
+    
+    localStorage.setItem('dadosPedido', JSON.stringify(novoRegistro));
+    // Aqui entraria o envio real (fetch) para o servidor, se houver
+    let registro = JSON.parse(localStorage.getItem('dadosPedido'))
+    console.log(registro)
+    
+    
+    
+    form.reset();
+    mostrarAlerta();
+    registro_id++
     });
 
 btnFechar.addEventListener('click', () => {
       alerta.classList.remove('visivel');
       clearTimeout(temporizador);
 })
+
+function registrarDados () {
+
+}
