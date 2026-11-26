@@ -371,33 +371,32 @@ form button {
     }
 
 /* CARRINHO */
+.container-lista-registros {
+    height: 30vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 20px;
+    overflow-y: scroll;
+}
 
-#itensCarrinho {
-    max-width: 600px;
-    margin: 25px auto;
+.registro-salvo {
+    width: 40vw;
+    height: 20vh;
+    background-color: var(--laranja);
     text-align: left;
+    padding: 10px 15px;
+    font-size: 17px;
+    border-radius: 5px;
+    color: black;
 }
 
-.item-carrinho {
-    background: white;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+.registro-salvo span {
+    font-size: 20px;
 }
 
-.item-carrinho p {
-    margin: 8px 0;
-}
 
-.item-carrinho button {
-    background: #79563a;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-}
 
 /* AVALIAÇÕES */
 
@@ -444,6 +443,8 @@ footer p {
     margin-top: 30px;
     font-size: 13px;
 }
+
+
 
 /* RESPONSIVIDADE */
 

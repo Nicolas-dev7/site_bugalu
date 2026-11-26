@@ -22,7 +22,7 @@
             <a href="#personalizar">Personalize</a>
             <a href="#avaliacoes">Avaliações</a>
             <a href="#contato">Contato</a>
-            <a href="#carrinho">Carrinho</a>
+            <a href="#carrinho">Meus pedidos</a>
         </nav>
         <div class="cabecalho-links-whatsapp">
             <img src="whatsapp-white-icon.svg" alt="">
@@ -159,7 +159,7 @@
             <label for="telefone">Telefone: </label>
             <input type="tel" id="telefone">
             <label>Tipo de móvel:</label>
-            <select id="tipo" required>
+            <select id="tipo" >
                 <option value="">Selecione</option>
                 <option value="mesa">Mesa</option>
                 <option value="cadeira">Cadeira</option>
@@ -170,10 +170,10 @@
             
             <label>Dimensões (comprimento x largura x altura):</label>
             <input type="text" id="dimensoes"
-            placeholder="Ex: 120 x 60 x 80 cm" required>
+            placeholder="Ex: 120 x 60 x 80 cm" >
             
             <label>Cor desejada:</label>
-            <select id="cor" required>
+            <select id="cor" >
                 <option value="">Selecione</option>
                 <option value="natural">Natural</option>
                 <option value="marrom">Marrom</option>
@@ -183,7 +183,7 @@
             </select>
             
             <label>Tipo de madeira:</label>
-            <select id="madeira" required>
+            <select id="madeira" >
                 <option value="">Selecione</option>
                 <option value="pinheiro">Pinheiro</option>
                 <option value="madeira_macica">Madeira maciça</option>
@@ -207,10 +207,18 @@
 </section>
 
 <section id="carrinho">
-    <h2>Meu carrinho</h2>
+    <div class="container-lista-registros">
+        <h2>Meus pedidos</h2>
+    
+            <p>Seu carrinho está vazio.</p>
+            <div id="lista">
+            <div class="registro-salvo">
+                <span>Pedido: </span>
+                <p></p>
+            </div>
+    
+        </div>
 
-    <div id="itensCarrinho">
-        <p>Seu carrinho está vazio.</p>
     </div>
 </section>
 
