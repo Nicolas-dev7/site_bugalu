@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugalu | Móveis Artesanais</title>
     <link rel="stylesheet" href="style.css">
+    
+     <style>
+            gmp-map {
+                height: 500px;
+                width: 80%;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            }
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <!-- <script type="module" src="index.js" defer></script> -->
+        <script src="index.js" defer></script>
+        <script
+            async
+            src="https://maps.googleapis.com/maps/api/js?loading=async&key=AIzaSyB-zc47io7tbW-iKSiNqtOTjRmSAyu8ANg&libraries=maps,marker"></script>
+
 </head>
 
-<body>
+<body id="pagina">
 
 <header>
     <div class="cabecalho-logo">
@@ -17,7 +37,6 @@
     </div>
     <div class="cabecalho-links">
         <nav>
-            <a href="#inicio">Início</a>
             <a href="#moveis">Móveis</a>
             <a href="#personalizar">Personalize</a>
             <a href="#avaliacoes">Avaliações</a>
@@ -208,22 +227,31 @@
 
 <section id="carrinho">
     <div class="container-lista-registros">
-        <h2>Meus pedidos</h2>
-    
-            <p>Seu carrinho está vazio.</p>
-            <div id="lista">
-            <div class="registro-salvo">
-                <span>Pedido: </span>
-                <p></p>
-            </div>
-    
+        <h2>Meus <span>pedidos</span></h2>
+            <p id="carrinho_vazio">Seu carrinho está vazio.</p>
+            <div id="lista" class="lista-registros"></div>
         </div>
-
+    </div>
+</section>
+<section>
+    <div class="container-endereco">
+        <h2>Onde nos <span>encontrar</span></h2>
+        <p>Endereço: R. Bernardo Mascarenhas, 1283 - Fábrica, Juiz de Fora - MG, 36080-001</p>
+        <div class="mapa">
+             <gmp-map
+            center="-21.741634169430128, -43.374170491085835"
+            zoom="13"
+            map-id="DEMO_MAP_ID">
+            <gmp-advanced-marker
+                position="-21.741634169430128, -43.374170491085835"
+                title="If Sudeste, MG"></gmp-advanced-marker>
+        </gmp-map>
+        </div>
     </div>
 </section>
 
-<section id="avaliacoes">
-    <h2>Avaliações de clientes</h2>
+<section id="avaliacoes" class="container-avaliacoes">
+    <h2>Avaliações dos <span>clientes</span></h2>
 
     <div class="avaliacoes">
 
@@ -249,18 +277,18 @@
 </section>
 
 <footer id="contato">
+        <h2>Bugalu, móveis e decorações</h2>
+        <p>100% artesanal. Feito com dedicação.</p>
+    
+        <p>Endereço: xxxx</p>
+        <p>Telefone: (32) 99999-9999</p>
+        <p>Instagram: @sua_marcenaria</p>
+        <p>Email: contato@bugalu.com</p>
+    
+        <p class="direitos">
+            © 2026 Bugalu - Todos os direitos reservados.
+        </p>
 
-    <h2>Bugalu, móveis e decorações</h2>
-    <p>100% artesanal. Feito com dedicação.</p>
-
-    <p>Endereço: xxxx</p>
-    <p>Telefone: (32) 99999-9999</p>
-    <p>Instagram: @sua_marcenaria</p>
-    <p>Email: contato@bugalu.com</p>
-
-    <p class="direitos">
-        © 2026 Bugalu - Todos os direitos reservados.
-    </p>
 
 </footer>
 
@@ -268,6 +296,6 @@
     <span>Seu pedido foi enviado! Bugalu Agradece</span>
     <button type="button" id="fechar-alerta" aria-label="Fechar">&times;</button>
   </div>
-<script src="index.js" defer></script>
+
 </body>
 </html>

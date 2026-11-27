@@ -98,9 +98,12 @@ function obterRegistros() {
 }
 
 let lista = document.getElementById('lista')
+let carrinho_vazio = document.getElementById('carrinho_vazio')
+
 
 function renderizarPedidos () {
     let vetor_registros = obterRegistros()
+    carrinho_vazio.style.opacity = '0'
     lista.innerHTML = ''
     vetor_registros.forEach(pedido => {
         console.log(pedido.nome)
@@ -108,8 +111,8 @@ function renderizarPedidos () {
         const p = document.createElement('p')
         const span = document.createElement('span')
         p.textContent = `${pedido.nome}, seu pedido foi feito com sucesso. Em breve entraremos em contato!`
-        span.textContent = pedido.id
-        div.classList.add = 'registro-salvo'
+        span.textContent = `Pedido: ${pedido.id}`
+        div.classList.add('registro-salvo')
         div.appendChild(span)
         div.appendChild(p)
         lista.appendChild(div)
@@ -131,7 +134,7 @@ form.addEventListener('submit', function(event) {
     }
     
     let listaRegistros = obterRegistros()
-
+    
     listaRegistros.push(novoRegistro)
 
     localStorage.setItem('dadosPedido', JSON.stringify(listaRegistros));
@@ -139,10 +142,20 @@ form.addEventListener('submit', function(event) {
     mostrarAlerta();
     form.reset();
     renderizarPedidos()
-
+    
     });
-
-btnFechar.addEventListener('click', () => {
-      alerta.classList.remove('visivel');
-      clearTimeout(temporizador);
-})
+    
+    
+    btnFechar.addEventListener('click', () => {
+        alerta.classList.remove('visivel');
+        clearTimeout(temporizador);
+    })
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log(obterRegistros())
+        if (obterRegistros().length === 0) {
+            carrinho_vazio.style.opacity = '1'
+            return;
+        } 
+        renderizarPedidos()
+    })
